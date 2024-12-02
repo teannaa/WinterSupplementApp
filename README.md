@@ -9,7 +9,7 @@
    - Maven
    - Git
    - Postman
-   - Mosquitto client
+   - Mosquitto client 2.0.20
  
  The mosquitto service need to be running to ensure that mosquitto client is active,it can be checked in services.msc (Windows).
 
