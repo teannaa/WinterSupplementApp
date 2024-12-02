@@ -15,30 +15,30 @@
 
 2. **Clone the Repository**
 
-git clone https://github.com/your-username/winter-supplement-rules-engine.git
-cd winter-supplement-rules-engine
+git clone https://github.com/teannaa/WinterSupplementApp.git
 
 3. **Build the Project**
 
-In Eclipse right click on project Run As->Maven clean
+In Eclipse right click on project Run As -> Maven clean after opening the project.
 
 4. The server will start by default at localhost:8080
 
 5. Use the REST API to subscribe to a specific topic using POSTMAN:
 
-POST http://localhost:8080/api/mqtt/subscribe?topicId=<mqtt topic id>,The mqtt topic id can be received from the Winter Supplement WebApp(https://winter-supplement-app-d690e5-tools.apps.silver.devops.gov.bc.ca/)
+POST http://localhost:8080/api/mqtt/subscribe?topicId=< mqtt topic id >.
+The mqtt topic id can be received from the Winter Supplement WebApp(https://winter-supplement-app-d690e5-tools.apps.silver.devops.gov.bc.ca/)
 
-6.Use mosquitto_pub -d -h test.mosquitto.org -t "BRE/calculateWinterSupplementInput/5138f6da-f9dc-4865-9c80-ae506c52f891" -m "{"id":"5138f6da-f9dc-4865-9c80-ae506c52f891","numberOfChildren":2,"familyComposition":"single","familyUnitInPayForDecember":true}" in the command line to publish values for winter supplement rules engine.
+6. Use the command
+**mosquitto_pub -d -h test.mosquitto.org -t "BRE/calculateWinterSupplementInput/< mqtt topic id >" -m "{"id":"< mqtt topic id >","numberOfChildren":2,"familyComposition":"single","familyUnitInPayForDecember":true}"**
+in the command line to publish values for winter supplement rules engine.
 
 7. **Subscribing to Results**
 
     To see the results, subscribe to the output topic:
-
-
-    mosquitto_sub -h localhost -t "BRE/calculateWinterSupplementOutput/<mqtt topic id>"
+    **mosquitto_sub -h localhost -t "BRE/calculateWinterSupplementOutput/< mqtt topic id >"**
     
 
-** Project Details**
+**Project Details**
 
 ## API Endpoints
 
